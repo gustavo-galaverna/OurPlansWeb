@@ -1,0 +1,344 @@
+/*-----------Desktop-------------*/
+
+/*Fundo*/
+
+.page{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('../../public/images/background-test.jpg');
+    background-size: 150vw 150vh;
+    background-position: -10vw -40vh;    
+    /* filter: blur(0px); */
+}
+
+/*Painel central*/
+
+.internal-painel {
+    width: 900px;
+    height: 600px;
+    background: rgb(232,60,124);
+    background: linear-gradient(180deg, #740938 0%, #AF1740 50%, #CC2B52 100%);
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    left: 0;
+    right: 0;    
+    top: 0;
+    bottom: 0;
+    border-radius: 10px;
+    box-shadow: 2px 2px 3px 3px rgba(31, 30, 31, 0.192);;
+}
+
+.left-panel{
+    width: 50%;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+
+.logo-info{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    left: 0;
+    right: 0;    
+    top: 120px;
+    width: 45%;
+}
+
+.logo-name{
+    position: absolute;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+    left: 0px;
+    right: 0;    
+    top: 330px;
+    width: 90%;    
+}
+
+.logo-title{
+    font-family: 'ProjectFontBold';
+    font-size: 30px;
+}
+
+.logo-description{
+    font-family: 'ProjectFont';
+    font-size: 10px;
+}
+
+.login-panel{
+    width: 50%;
+    height: 100%;
+    float: right;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+}
+
+.login-panel-content{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    height: 400px;
+    margin-top: 30px;
+    font-family: 'ProjectFontBold';
+    color: #a1a1a1;
+    font-size: 8px;
+}
+
+.logo-mobile{
+    display: none;
+}
+
+.login-panel-content h3{
+    font-size: 20px;
+    color: #CC2B52;
+    margin-bottom: 5px;
+    font-weight: 100;
+}
+
+.login-panel-content p{
+    font-family: 'ProjectFont';    
+    margin-top: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.login-form{
+    margin-top: 35px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+  
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.login-panel-content form{
+    width: 100%;
+}
+
+.form-group input {
+    width: 90%;
+    height: 25px;
+    padding: 8px;
+    background-color: #dfdede;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    border-left: 5px solid #CC2B52;
+    color: rgb(77, 77, 77);
+    font-size: 14px;
+    font-family: 'ProjectFont';
+}
+
+.form-group input:focus{
+    border-bottom: 1px solid #cc2b5369;
+}
+
+.button-separation button{
+    float: left;
+    width: 42%;
+    height: 35px;
+    background: #CC2B52;
+    border: none;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-family: 'ProjectFontBold';
+    border-radius: 20px;
+    cursor: pointer;
+    transition: font-size 0.5s ease, opacity 0.5s;
+    user-select: none;
+}
+
+.button-separation button:hover{
+    font-size: 15px;
+    opacity: 0.8;
+    user-select: none;
+}
+
+.button-separation p{
+    float: left;
+    line-height: 35px;
+    font-size: 15px;
+    color: #000000;
+}
+
+.form-button-remember{
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 2px;
+}
+.form-button-remember span{
+    line-height: 10px;
+    font-size: 10px;
+    color: #4d4d4d;
+    font-family: 'ProjectFont';
+}
+.form-button-remember input[type="checkbox"]{
+    float:left;
+    width: 17px; /* Define a largura da checkbox */
+    height: 17px; /* Define a altura da checkbox */
+    transform: scale(1); /* Aumenta a escala da checkbox */
+    -webkit-transform: scale(1); /* Compatibilidade com WebKit */
+    -moz-transform: scale(1); /* Compatibilidade com Mozilla */
+    -ms-transform: scale(1); /* Compatibilidade com Microsoft */
+    -o-transform: scale(1);
+}
+
+.forgot-password{
+    width: 210px;
+    text-align: right;
+}
+
+.forgot-password span{
+    position: relative;
+    font-weight: bold;
+    color: #AF1740;
+    cursor: pointer;
+    font-size: 12px;
+    text-decoration: none;
+    transition: text-decoration 0.5s ease;
+}
+
+/* Estilo do elemento decorativo */
+.forgot-password span::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: #AF1740;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+/* Alteração do estilo ao passar o mouse */
+.forgot-password span:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+
+/* Esconde a checkbox padrão */
+.form-button-remember input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    position: relative;
+    cursor: pointer;
+    border: 1px solid #4d4d4d;
+    transition: background 0.2s ease-out;
+}
+
+.form-button-remember input[type="checkbox"]:checked{
+    background: #AF1740;
+    border: none;
+}
+
+.form-button-remember input[type="checkbox"]:checked:before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 6px;
+    width: 6px;
+    height: 12px;
+    border: solid #FFFFFF;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* ------------- Mobile ------------- */
+@media (max-width: 768px){
+    .page{
+        display: none;
+    }
+    .internal-painel{
+        width: 100vw;
+        height: 100vh;
+    }
+    .left-panel{
+        display: none;
+    }
+    .login-panel{
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+    }
+    .login-panel-content{
+        margin-top: 15vh;
+    }
+    .logo-mobile{
+        display: block;
+        width: 50%;
+        border-radius: 15px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .form-button-remember span{
+        width: 67px;
+    }
+    .form-button-remember input[type="checkbox"]{
+        float:left;
+        width: 15px; /* Define a largura da checkbox */
+        height: 15px; /* Define a altura da checkbox */
+        transform: scale(1); /* Aumenta a escala da checkbox */
+        -webkit-transform: scale(1); /* Compatibilidade com WebKit */
+        -moz-transform: scale(1); /* Compatibilidade com Mozilla */
+        -o-transform: scale(1);
+        border-radius: 15px;
+    }    
+    .forgot-password{
+        width: 183px;
+    }
+    .button-separation button{
+        margin-left: 2%;
+        width: 95%;
+        border-radius: 10px;
+    }
+    .button-separation p{
+        margin-left: 2.5%;
+        margin-top: 0;
+        margin-bottom: 0;        
+        width: 95%;
+        padding: 0;
+    }
+    .form-button-remember input[type="checkbox"]:checked:before {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 5px;
+        width: 4px;
+        height: 8px;
+        border: solid #FFFFFF;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+    }    
+}

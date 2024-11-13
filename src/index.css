@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'ProjectFont';
+  src: url('./fonts/poppings/Poppins-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'ProjectFontBold';
+  src: url('./fonts/poppings/Poppins-Bold.ttf') format('truetype');
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.container {
+  display: flex;
+  justify-content: center; /* Alinha horizontalmente ao centro */
+  align-items: center;     /* Alinha verticalmente ao centro */
+  height: 100vh;           /* Altura da tela inteira */
+  z-index: 100;
+}

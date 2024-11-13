@@ -1,0 +1,103 @@
+
+.background{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url('../../public/images/confirm_email_background.png') 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centered-panel{
+    width: 700px;
+    height: 100%;
+}
+
+.confirm-logo{
+    margin-top: 130px;
+    height: 100px;
+    width: 100%;
+    color:white;
+    font-weight: bold;
+    font-size: 3em;
+    line-height: 290px;
+    font-family: 'ProjectFontBold';
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    user-select: none;
+}
+
+.confirm-panel{
+    width: 640px;
+    height: 500px;
+    background: white;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'ProjectFont';
+    font-size: 13px;
+    font-weight: 100;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: center;
+}
+
+.confirm-logo .logo{
+    width: 8%;
+    margin-right: 10px;
+}
+
+.confirm-img{
+    width: 136.90px;
+    height: 150px;
+    
+}
+
+.code-input{
+    margin-top: 10px;
+    border: none;
+    border-bottom: 1px solid black;
+    font-family: 'ProjectFont';
+    outline: none;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-align: center;
+}
+
+.confirm-panel button{
+    float: left;
+    width: 42%;
+    height: 35px;
+    background: #CC2B52;
+    border: none;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-family: 'ProjectFontBold';
+    border-radius: 20px;
+    cursor: pointer;
+    transition: font-size 0.5s ease, opacity 0.5s;
+    margin-top: 20px;
+    user-select: none;
+}
+
+.confirm-panel button:hover{
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.resend{
+    margin-top: 20px;
+}
+
+.resend a{
+    text-decoration: none;
+    color: #CC2B52;
+}
