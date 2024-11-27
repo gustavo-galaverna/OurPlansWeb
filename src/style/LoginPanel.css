@@ -129,6 +129,7 @@
     margin-bottom: 5px;
 }
 
+
 .login-panel-content form{
     width: 100%;
 }
@@ -149,6 +150,12 @@
 
 .form-group input:focus{
     border-bottom: 1px solid #cc2b5369;
+}
+
+.form-group p{
+    text-align: left;
+    color: #CC2B52;
+    font-size: 10px;
 }
 
 .button-separation button{

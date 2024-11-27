@@ -1,11 +1,58 @@
 import '../style/LoginPanel.css';
 import React from 'react';
+import { useForm, SubmitHandler } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as Yup from 'yup';
+import {loginUser} from '../api/userService'
+import {LoginRequest} from '../models/LoginRequest'
+import { useNavigate } from 'react-router-dom';
+import { usePopupContext } from '../context/PopupContext';
+import { useAuthContext } from '../context/AuthContext';
+
+type FormData = {
+    email: string;
+    password: string;
+}
+
+const schema = Yup.object().shape({
+    email: Yup.string().required("Insira o email"),//email("E-mail inválido")
+    password: Yup.string().required("Insira a senha"),
+  });
 
 const LoginPanel: React.FC = () => {
 
+    const { login } = useAuthContext();
+    const { showPopup } = usePopupContext();
+    const navigate = useNavigate();
+
+    const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
+        resolver: yupResolver(schema),
+      });
+    
+      const onSubmit: SubmitHandler<FormData> = async data => {
+        let request = new LoginRequest(data.email, data.password);
+        var response = await loginUser(request);
+        if(response.value != null)
+        {
+            if(response.value.needsConfirmation)
+            {
+                navigate("/confirm-email", { state: response.value });
+            }
+            else
+            {
+                login();
+                navigate("/dashboard");
+            }
+        }
+      };
+    
+      const Testar = () => {
+          showPopup("Este é um teste de popup, pode ser que tenha dado algum erro...");
+      }
+      
 
     return(
-        <div>
+        <form onSubmit={handleSubmit(onSubmit)}>
             <div className='page'></div>
             <div className="internal-painel">
                 <div className='left-panel'>
@@ -23,22 +70,13 @@ const LoginPanel: React.FC = () => {
                         <h3>Bem Vindo</h3> 
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown.</p>
                         <div className='login-form'>
-                        <form>
                             <div className="form-group">
-                            <input
-                                type="text"
-                                id="username"
-                                placeholder='Email'
-                                required
-                            />
+                                <input {...register("email")} placeholder='Email' autoComplete='section-login login currentEmail'/>
+                                <p>{errors.email?.message}</p>
                             </div>
                             <div className="form-group">
-                            <input
-                                type="password"
-                                id="password"
-                                placeholder='Senha'
-                                required
-                            />
+                                <input type='password' {...register("password")} placeholder='Senha' autoComplete='section-login login currentPassword'/>
+                                <p>{errors.password?.message}</p>
                             </div>
                             <div className='form-button-remember'>
                                 <input type='checkbox'/> 
@@ -50,15 +88,14 @@ const LoginPanel: React.FC = () => {
                             <div className='button-separation'>
                                 <button type="submit">Log in</button>
                                 <p>ou</p>
-                                <button type="submit">Registrar</button>                            
-                            </div>
-                        </form>                        
+                                <button onClick={Testar} type='button'>Registrar</button>                            
+                            </div>                     
                         </div>
                     </div>
                     
                 </div>
             </div>    
-        </div>        
+        </form>        
     );
 }
 
